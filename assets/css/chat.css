@@ -1,0 +1,274 @@
+/* ELVION assistant — chat widget.
+   Kept in its own file so the 1,000-line site stylesheet stays untouched.
+   Every rule is scoped under .elvion-chat and cannot leak into the pages. */
+
+.elvion-chat {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+}
+
+/* ── Launcher ───────────────────────────────────────────────────────────── */
+
+.elvion-chat .ec-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 48px;
+  padding: 12px 20px 12px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #E8BE5C 0%, #D8A84A 100%);
+  color: #06152A;
+  font-family: var(--font-data);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(6, 21, 42, 0.28), 0 0 0 1px rgba(216, 168, 74, 0.5);
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
+}
+.elvion-chat .ec-launcher:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(6, 21, 42, 0.34), 0 0 0 1px rgba(216, 168, 74, 0.7);
+}
+.elvion-chat .ec-launcher:focus-visible {
+  outline: 3px solid #3FA9F5;
+  outline-offset: 3px;
+}
+.elvion-chat .ec-launcher-icon { display: inline-flex; }
+
+/* Once the panel is open the label is redundant — collapse to a round button. */
+.elvion-chat.is-open .ec-launcher-text { display: none; }
+.elvion-chat.is-open .ec-launcher { padding: 12px; width: 48px; justify-content: center; }
+
+/* ── Panel ──────────────────────────────────────────────────────────────── */
+
+.elvion-chat .ec-panel {
+  width: min(370px, calc(100vw - var(--space-xl)));
+  max-height: min(540px, calc(100vh - 140px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(11, 17, 26, 0.26);
+  animation: ec-rise 0.26s var(--ease-out) both;
+}
+/* `display: flex` above would otherwise defeat the [hidden] attribute. */
+.elvion-chat .ec-panel[hidden] { display: none; }
+@keyframes ec-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.elvion-chat .ec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 14px var(--space-md);
+  background: linear-gradient(180deg, #06152A 0%, #081B33 100%);
+  color: #FFFFFF;
+}
+.elvion-chat .ec-head-text { display: flex; flex-direction: column; line-height: 1.3; }
+.elvion-chat .ec-head-text strong { font-size: 15px; font-weight: 700; }
+.elvion-chat .ec-head-text span {
+  font-family: var(--font-data);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9FB0C4;
+}
+.elvion-chat .ec-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.elvion-chat .ec-close:hover { background: rgba(255, 255, 255, 0.2); }
+.elvion-chat .ec-close:focus-visible { outline: 2px solid #5DEBFF; outline-offset: 2px; }
+
+/* ── Message log ────────────────────────────────────────────────────────── */
+
+.elvion-chat .ec-log {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--surface);
+}
+.elvion-chat .ec-msg { display: flex; }
+.elvion-chat .ec-msg-bot { justify-content: flex-start; }
+.elvion-chat .ec-msg-user { justify-content: flex-end; }
+
+.elvion-chat .ec-bubble {
+  max-width: 86%;
+  padding: 10px 14px;
+  border-radius: var(--radius-lg);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.elvion-chat .ec-msg-bot .ec-bubble {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: var(--radius-sm);
+}
+.elvion-chat .ec-msg-user .ec-bubble {
+  background: #06152A;
+  color: #FFFFFF;
+  border-bottom-right-radius: var(--radius-sm);
+}
+.elvion-chat .ec-bubble a { color: var(--steel); font-weight: 600; }
+.elvion-chat .ec-msg-user .ec-bubble a { color: #5DEBFF; }
+
+/* Typing indicator */
+.elvion-chat .ec-bubble-typing { padding: 12px 14px; }
+.elvion-chat .ec-typing { display: inline-flex; gap: 4px; }
+.elvion-chat .ec-typing i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: ec-blink 1.1s infinite ease-in-out;
+}
+.elvion-chat .ec-typing i:nth-child(2) { animation-delay: 0.16s; }
+.elvion-chat .ec-typing i:nth-child(3) { animation-delay: 0.32s; }
+@keyframes ec-blink {
+  0%, 80%, 100% { opacity: 0.28; transform: translateY(0); }
+  40%           { opacity: 1;    transform: translateY(-2px); }
+}
+
+/* ── Quick-reply chips ──────────────────────────────────────────────────── */
+
+.elvion-chat .ec-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 2px;
+}
+.elvion-chat .ec-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1.5px solid var(--steel);
+  border-radius: 999px;
+  background: var(--surface-raised);
+  color: var(--steel);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+.elvion-chat .ec-chip:hover { background: var(--steel); color: #FFFFFF; }
+.elvion-chat .ec-chip:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+/* ── Input row ──────────────────────────────────────────────────────────── */
+
+.elvion-chat .ec-form {
+  display: flex;
+  gap: var(--space-sm);
+  padding: 10px var(--space-md);
+  border-top: 1px solid var(--border);
+  background: var(--surface-raised);
+}
+.elvion-chat .ec-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px; /* 16px stops iOS Safari zooming on focus */
+}
+.elvion-chat .ec-input:focus {
+  outline: none;
+  border-color: var(--steel);
+  box-shadow: 0 0 0 3px rgba(47, 111, 143, 0.18);
+}
+.elvion-chat .ec-send {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: #06152A;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.elvion-chat .ec-send:hover { background: #0D2947; }
+.elvion-chat .ec-send:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+.elvion-chat .ec-foot {
+  margin: 0;
+  padding: 8px var(--space-md) 12px;
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.elvion-chat .ec-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Dark theme ─────────────────────────────────────────────────────────── */
+
+:root[data-theme="dark"] .elvion-chat .ec-panel { box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6); }
+:root[data-theme="dark"] .elvion-chat .ec-msg-user .ec-bubble { background: #1F3E63; }
+:root[data-theme="dark"] .elvion-chat .ec-chip { color: #6FC5EC; border-color: #35617C; }
+:root[data-theme="dark"] .elvion-chat .ec-chip:hover { background: #35617C; color: #FFFFFF; }
+:root[data-theme="dark"] .elvion-chat .ec-bubble a { color: #6FC5EC; }
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 520px) {
+  .elvion-chat { right: 12px; bottom: 12px; left: 12px; align-items: stretch; }
+  .elvion-chat .ec-panel { width: 100%; max-height: calc(100vh - 150px); }
+  .elvion-chat .ec-launcher { align-self: flex-end; }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .elvion-chat .ec-panel { animation: none; }
+  .elvion-chat .ec-typing i { animation: none; opacity: 0.6; }
+  .elvion-chat .ec-launcher { transition: none; }
+  .elvion-chat .ec-launcher:hover { transform: none; }
+}
+
+/* Printing a page should never include the widget. */
+@media print { .elvion-chat { display: none !important; } }

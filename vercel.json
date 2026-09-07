@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/product/compatible-with-wa-style-devices/",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/compatible-with-wa-style-devices",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/(.*)",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-includes/(.*)",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-admin/(.*)",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ]
+}
