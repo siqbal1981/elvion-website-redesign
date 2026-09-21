@@ -55,6 +55,8 @@ function initGallery() {
   thumbs.forEach((btn) => {
     btn.addEventListener('click', () => {
       main.src = btn.getAttribute('data-gallery-thumb');
+      const thumbImage = btn.querySelector('img');
+      if (thumbImage) main.alt = thumbImage.alt;
       thumbs.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
     });
