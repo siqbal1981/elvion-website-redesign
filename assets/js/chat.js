@@ -131,22 +131,22 @@
     },
     specs: {
       keywords: ['spec', 'specs', 'specification', 'specifications', 'voltage', 'volt',
-                 'watt', 'wattage', 'halogen', 'technical', '3.5v'],
+                 'watt', 'wattage', 'halogen', 'technical', '3.5v', '2.5v'],
       answer:
-        'The bulb is a <strong>3.5V halogen</strong> lamp intended for Welch Allyn® ' +
-        'diagnostic instrument heads, supplied in bend-back-to-open blister ' +
-        'packaging. Full specifications are on the shop page.',
-      chips: [{ label: 'Full specifications', href: 'shop.html#product' },
+        'Specifications differ by model, so there is no single voltage for every ELVION bulb. ' +
+        'For example, our listings show 3.5V for 03100-U but 2.5V for 03900-U. Each model\'s ' +
+        'voltage and lamp type are shown on the shop page. Always check the lamp reference in ' +
+        'your instrument\'s manual before ordering.',
+      chips: [{ label: 'Compare models', href: 'shop.html#models' },
               { label: 'How is it packaged?', topic: 'packaging' }],
     },
     packaging: {
       keywords: ['packaging', 'package', 'packed', 'blister', 'box', 'pack'],
       answer:
-        'Each bulb is supplied in bend-back-to-open blister packaging. The pack ' +
-        'protects the glass envelope in transit and opens without tools or scissors ' +
-        "— useful when you're replacing a lamp between patients rather than at a " +
-        'workbench.',
-      chips: [{ label: 'Full specifications', href: 'shop.html#product' }],
+        'Pack sizes differ by listing. Most models are sold as a single bulb, and 03100-U is ' +
+        'also offered in 2-pack and 5-pack listings. Check the pack size on the Amazon listing ' +
+        'before you order, or ask us.',
+      chips: [{ label: 'Compare models', href: 'shop.html#models' }],
     },
     oem: {
       keywords: ['welch allyn', 'welch', 'allyn', 'oem', 'original', 'genuine', 'brand',
@@ -210,7 +210,7 @@
         'before you order.',
       chips: [{ label: 'Confirm my fitment', href: 'contact.html' },
               { label: 'WhatsApp us', href: WHATSAPP, external: true },
-              { label: 'See specifications', href: 'shop.html#product' }],
+              { label: 'See this model', href: 'shop.html#m-' + part.toLowerCase() }],
     };
   }
 
