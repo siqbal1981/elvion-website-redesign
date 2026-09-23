@@ -220,3 +220,10 @@ textarea.field { min-height: 140px; resize: vertical; }
   .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
   .js .reveal.is-visible { opacity: 1; transform: none; }
 }
+
+/* Model photos on product cards */
+.product-photo { margin: -24px -24px 18px; aspect-ratio: 1 / 1; background: var(--navy-50); border-bottom: 1px solid var(--line); border-radius: var(--r-md) var(--r-md) 0 0; overflow: hidden; }
+.product-photo img { width: 100%; height: 100%; object-fit: cover; }
+.product-photo-empty { display: flex; align-items: center; justify-content: center; }
+.product-photo-empty span { font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+@media (max-width: 560px) { .product-photo-empty { aspect-ratio: 3 / 1; } }
