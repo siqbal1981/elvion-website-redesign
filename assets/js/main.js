@@ -20,7 +20,8 @@ function initNavToggle() {
   const nav = document.querySelector('[data-nav]');
   if (!toggle || !nav) return;
   toggle.addEventListener('click', () => {
-    nav.classList.toggle('is-open');
+    const open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => nav.classList.remove('is-open'));
@@ -82,6 +83,27 @@ function initContactForm() {
     status.hidden = false;
   }
 
+  // If the server cannot send, offer the same message as a ready-to-send email
+  // so the customer's words are never lost.
+  function offerEmailFallback(payload) {
+    if (!status) return;
+    const subject = 'ELVION enquiry' + (payload.device ? ' (' + payload.device + ')' : '');
+    const body = (payload.message || '') + '\n\nName: ' + (payload.name || '') +
+      (payload.clinic ? '\nClinic: ' + payload.clinic : '') +
+      (payload.device ? '\nInstrument / lamp: ' + payload.device : '');
+    const link = document.createElement('a');
+    link.className = 'btn btn-navy';
+    link.style.marginTop = '12px';
+    link.style.width = '100%';
+    link.href = 'mailto:saleselvion@gmail.com?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+    link.textContent = 'Send it by email instead';
+    status.textContent = "Sorry — the form couldn't send your message just now. " +
+      'Tap below to send the same message from your email app, or call/WhatsApp +1 (774) 301-5605.';
+    status.appendChild(document.createElement('br'));
+    status.appendChild(link);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -105,15 +127,15 @@ function initContactForm() {
         setStatus('success', "Thanks — your message is on its way. We'll reply by email shortly.");
         form.reset();
         if (timeField) timeField.value = String(Date.now());
+      } else if (res.status === 400 || res.status === 429) {
+        setStatus('error', data.error || 'Please check the form and try again.');
       } else {
-        setStatus('error', data.error ||
-          "Sorry — we couldn't send your message. Please call +1 (774) 301-5605 " +
-          'or email saleselvion@gmail.com.');
+        setStatus('error', '');
+        offerEmailFallback(payload);
       }
     } catch (err) {
-      setStatus('error',
-        "Sorry — we couldn't reach the server. Please call +1 (774) 301-5605 " +
-        'or email saleselvion@gmail.com.');
+      setStatus('error', '');
+      offerEmailFallback(payload);
     } finally {
       if (button) {
         button.disabled = false;
