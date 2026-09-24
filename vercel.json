@@ -36,6 +36,131 @@
       "source": "/wp-admin/(.*)",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/shop",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/shop/",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq/",
+      "destination": "/faq.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/(.*)",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-category/(.*)",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cart/",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/cart",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/checkout/",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/checkout",
+      "destination": "/shop.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/my-account/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/my-account",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "statusCode": 301
     }
   ]
 }
