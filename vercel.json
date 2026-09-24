@@ -13,6 +13,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "elvion-website.vercel.app"
+        }
+      ],
+      "destination": "https://www.elvionbulb.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "statusCode": 301
