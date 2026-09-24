@@ -133,11 +133,9 @@
       keywords: ['spec', 'specs', 'specification', 'specifications', 'voltage', 'volt',
                  'watt', 'wattage', 'halogen', 'technical', '3.5v', '2.5v'],
       answer:
-        'Specifications differ by model, so there is no single voltage for every ELVION bulb. ' +
-        '03000-U, 03800-U and HPX06500 are 3.5V; we are still confirming the voltage for 03100-U, ' +
-        '03400-U and 03900-U. Each model\'s ' +
-        'confirmed details are shown on the shop page. Always check the lamp reference in ' +
-        'your instrument\'s manual before ordering.',
+        'Voltage can differ between lamp references, and we do not list voltage on the website yet. ' +
+        'Please check the lamp voltage and lamp reference in your instrument\'s manual, or ask us, ' +
+        'before ordering. Each model page shows its model number, a real photo and pack sizes.',
       chips: [{ label: 'Compare models', href: 'shop.html#models' },
               { label: 'How is it packaged?', topic: 'packaging' }],
     },
