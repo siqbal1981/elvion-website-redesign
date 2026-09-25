@@ -119,6 +119,11 @@
       "statusCode": 301
     },
     {
+      "source": "/guides/",
+      "destination": "/guides.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product/(.*)",
       "destination": "/shop.html",
       "statusCode": 301
