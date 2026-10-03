@@ -1,3 +1,7 @@
+/* Self-hosted variable fonts (latin subset) */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('../fonts/fraunces-var.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 200 900; font-display: swap; src: url('../fonts/source-sans-3-var.woff2') format('woff2'); }
+picture { display: contents; }
 /* ELVION — site styles v2 (navy · white · restrained gold) */
 :root {
   --navy-900: #081628;
@@ -7,7 +11,7 @@
   --navy-100: #E7EDF5;
   --navy-50:  #F4F7FB;
   --gold:     #B8924A;
-  --gold-600: #9A7634;
+  --gold-600: #7A5C22;
   --gold-200: #E9D9B6;
   --white:    #FFFFFF;
   --ink:      #152235;
@@ -206,7 +210,7 @@ textarea.field { min-height: 140px; resize: vertical; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 32px; }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
-.site-footer h4 { color: var(--white); font-size: 15px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 12px; font-family: var(--f-body); }
+.site-footer h3 { color: var(--white); font-size: 15px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 12px; font-family: var(--f-body); }
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .site-footer p { color: #B9C6D6; font-size: 15px; }
 .site-footer .brand { color: var(--white); margin-bottom: 12px; }
