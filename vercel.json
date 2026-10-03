@@ -39,21 +39,6 @@
       "statusCode": 301
     },
     {
-      "source": "/wp-content/(.*)",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/wp-includes/(.*)",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/wp-admin/(.*)",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
       "source": "/about-us",
       "destination": "/about.html",
       "statusCode": 301
@@ -162,26 +147,56 @@
       "source": "/my-account",
       "destination": "/",
       "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/__gone"
     },
     {
-      "source": "/feed/",
-      "destination": "/",
-      "statusCode": 301
+      "source": "/wp-includes/:path*",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/__gone"
     },
     {
       "source": "/feed",
-      "destination": "/",
-      "statusCode": 301
+      "destination": "/__gone"
     },
     {
-      "source": "/comments/feed/",
-      "destination": "/",
-      "statusCode": 301
+      "source": "/feed/",
+      "destination": "/__gone"
     },
     {
       "source": "/comments/feed",
-      "destination": "/",
-      "statusCode": 301
+      "destination": "/__gone"
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/:path*/feed",
+      "destination": "/__gone"
+    },
+    {
+      "source": "/:path*/feed/",
+      "destination": "/__gone"
     }
   ]
 }
