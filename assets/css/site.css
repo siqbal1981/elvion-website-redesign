@@ -107,6 +107,7 @@ section { padding: clamp(56px, 8vw, 96px) 0; }
 .hero-figure { margin: 0; }
 .hero-figure img { border-radius: var(--r-lg); box-shadow: 0 24px 60px rgba(0,0,0,.35); aspect-ratio: 1; object-fit: cover; width: 100%; }
 .hero-figure figcaption { font-size: 14px; color: #AFC0D4; margin-top: 10px; }
+.hero-figure figcaption.muted { color: var(--muted); }
 .page-hero { background: var(--navy-800); color: var(--white); padding: clamp(44px, 6vw, 72px) 0; }
 .page-hero h1 { color: var(--white); max-width: 22ch; }
 .page-hero .lede { color: #D5DEEA; }
