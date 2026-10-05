@@ -108,4 +108,28 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.elvionbulb.com/otoscope-bulbs.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.elvionbulb.com/ophthalmoscope-bulbs.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.elvionbulb.com/how-to-choose-a-replacement-otoscope-bulb.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.elvionbulb.com/how-to-replace-an-otoscope-bulb-safely.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
