@@ -304,7 +304,7 @@
     var launcher = el('button', 'ec-launcher');
     launcher.type = 'button';
     launcher.setAttribute('aria-expanded', 'false');
-    launcher.setAttribute('aria-label', 'Open the ELVION assistant');
+    launcher.setAttribute('aria-label', 'Ask about fitment: open the ELVION assistant');
     launcher.innerHTML =
       '<span class="ec-launcher-icon" aria-hidden="true">' +
       '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" ' +
@@ -434,7 +434,7 @@
       panel.hidden = false;
       root.classList.add('is-open');
       launcher.setAttribute('aria-expanded', 'true');
-      launcher.setAttribute('aria-label', 'Close the ELVION assistant');
+      launcher.setAttribute('aria-label', 'Ask about fitment: close the ELVION assistant');
       if (!started) {
         started = true;
         addMessage('bot', GREETING.answer);
@@ -447,7 +447,7 @@
       panel.hidden = true;
       root.classList.remove('is-open');
       launcher.setAttribute('aria-expanded', 'false');
-      launcher.setAttribute('aria-label', 'Open the ELVION assistant');
+      launcher.setAttribute('aria-label', 'Ask about fitment: open the ELVION assistant');
       launcher.focus();
     }
 
