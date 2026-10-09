@@ -25,7 +25,8 @@ Last updated: 2026-10-08 (session 2). Preferred domain https://www.elvionbulb.co
 - Third-party distributor pages (not official) quote 3.5V for 03000/03800/03100/06500 and 2.5V for 03900 and disagree elsewhere. NOT published. Treat as unverified.
 - Prices/stock: not shown; Amazon buy links only (owner decision 2026-10-09).
 - Reviews: none added; no genuine, verifiable ELVION reviews available. Do not add Review/AggregateRating markup unless real reviews are displayed on the page.
-- Search Console access via Chrome only; indexing requests: see final report for status.
+- Search Console: browser access was denied on 2026-10-09 ("Permission denied for this action on this domain"), so NO indexing requests were made. TODO (manual or once access is granted): in Search Console (property elvionbulb.com) > URL Inspection, paste each of the six product URLs, wait for "URL is on Google", click "Request indexing" once each. Do not repeat.
+- Post-deploy PageSpeed (2026-10-09 10:16 AM ET): 03800-U mobile 100/100/100/100. PR #10 (manufacturer chart) merged, merge commit a26829d; live check of all six pages OK.
 
 ## Recheck Search Console on or after 2026-10-16 (7 days after merge)
 Compare 7 days vs previous 7, check six pages remain indexed, last crawl dates after 2026-10-09, sitemap lastmod read.
