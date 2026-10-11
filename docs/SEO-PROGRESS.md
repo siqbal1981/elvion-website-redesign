@@ -42,3 +42,10 @@ Product snippets/merchant listings need visible price+availability (offers) or g
 2. ELVION's own supplier datasheet per model (voltage, wattage, base, bulb type) so ELVION specs can be shown separately.
 3. Which instruments ELVION has confirmed each bulb fits (if you want an ELVION compatibility claim).
 4. Any real customer reviews you can verify (order-linked) if you want them shown.
+
+
+## 2026-10-11 update
+- GSC read successfully (see SEO-BASELINE-2026-10-11.md): 3 clicks, 51 impressions, avg position 3.8 over 3 months; 13 indexed, 19 not indexed (mostly legacy URLs); sitemap read OK (16 URLs).
+- Added two guides: how-to-find-your-otoscope-lamp-reference.html and otoscope-or-ophthalmoscope-light-not-working.html. Linked from guides.html and all six model pages; added to sitemap.
+- Research notes: SEO-COMPETITOR-KEYWORD-RESEARCH-2026-10-11.md.
+- Next: after merge, check the new guide URLs in GSC (URL inspection, request indexing); compare on or after 2026-10-16 and at 4, 8, 12 weeks.
