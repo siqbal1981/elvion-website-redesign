@@ -49,3 +49,9 @@ Product snippets/merchant listings need visible price+availability (offers) or g
 - Added two guides: how-to-find-your-otoscope-lamp-reference.html and otoscope-or-ophthalmoscope-light-not-working.html. Linked from guides.html and all six model pages; added to sitemap.
 - Research notes: SEO-COMPETITOR-KEYWORD-RESEARCH-2026-10-11.md.
 - Next: after merge, check the new guide URLs in GSC (URL inspection, request indexing); compare on or after 2026-10-16 and at 4, 8, 12 weeks.
+
+### 2026-10-11 (later): published and indexing requested
+- PR #12 merged to main (commit 49397cf); Vercel production deployment dpl_HJDFWVhprjECPSczRtgnmnAT6Mxv READY.
+- Both new guide URLs load live on https://www.elvionbulb.com. Search Console URL inspection showed "URL is unknown to Google"; Request indexing accepted for both (priority crawl queue).
+- Also added: a sourced Welch Allyn chart quick-lookup list in the lamp-reference guide (no voltage).
+- Recheck on or after 2026-10-16: indexed status of both guides; clicks/impressions vs SEO-BASELINE-2026-10-11.md.
