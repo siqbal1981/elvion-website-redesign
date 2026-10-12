@@ -4,7 +4,7 @@ Supplied by Saeed Iqbal (owner). They describe Welch Allyn's own lamp references
 
 | Model | Source described by owner | Lamp type | Voltage as documented |
 |---|---|---|---|
-| 03000-U | Welch Allyn price list (hosted by a distributor) | Halogen | 3.5 V |
+| 03000-U | original manufacturer price list (hosted by a distributor) | Halogen | 3.5 V |
 | 03100-U | Welch Allyn/Hillrom catalog | Halogen | 3.5 V |
 | 03400-U | Welch Allyn/Hillrom catalog | Halogen replacement lamp | 2.5 V is the rating of the PocketScope instrument line, per the catalog |
 | 03800-U | Welch Allyn PanOptic sales sheet | Halogen HPX | 3.5 V |
