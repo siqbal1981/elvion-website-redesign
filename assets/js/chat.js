@@ -133,9 +133,10 @@
       keywords: ['spec', 'specs', 'specification', 'specifications', 'voltage', 'volt',
                  'watt', 'wattage', 'halogen', 'technical', '3.5v', '2.5v'],
       answer:
-        'Voltage can differ between lamp references, and we do not list voltage on the website yet. ' +
+        'Voltage differs between lamp references. 03000-U, 03100-U and 03800-U are listed at 3.5 V, and 03900-U is listed at 2.5 V. ' +
+        'We are still confirming the voltage for 03400-U and HPX06500. ' +
         'Please check the lamp voltage and lamp reference in your instrument\'s manual, or ask us, ' +
-        'before ordering. Each model page shows its model number, a real photo and pack sizes.',
+        'before ordering. Each model page shows its model number, a real photo and details.',
       chips: [{ label: 'Compare models', href: 'shop.html#models' },
               { label: 'How is it packaged?', topic: 'packaging' }],
     },
